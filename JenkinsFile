@@ -9,7 +9,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Pulling the code from GitHub
-                git branch: 'main', url: 'https://github.com/yourusername/MyDotNetApp.git'
+                git branch: 'master', url: 'https://github.com/rahulkn2001/JenkinsTraining.git'
             }
         }
 
