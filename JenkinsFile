@@ -33,28 +33,28 @@ pipeline {
         stage('Restore') {
             steps {
                 script {
-                    bat 'dotnet restore MyConsoleApp/MyConsoleApp.csproj'
+                    bat 'dotnet restore MyApp/MyApp.csproj'
                 }
             }
         }
         stage('Build') {
             steps {
                 script {
-                    bat 'dotnet build MyConsoleApp/MyConsoleApp.csproj'
+                    bat 'dotnet build MyApp/MyApp.csproj'
                 }
             }
         }
         stage('Test') {
             steps {
                 script {
-                    bat 'dotnet test MyConsoleApp.Tests/MyConsoleApp.Tests.csproj --logger "trx;LogFileName=TestResults/test_results.trx"'
+                    bat 'dotnet test MyApp.Tests/MyApp.Tests.csproj --logger "trx;LogFileName=TestResults/test_results.trx"'
                 }
             }
         }
         stage('List Test Results') {
             steps {
                 script {
-                    bat 'dir "MyConsoleApp.Tests\\TestResults"'
+                    bat 'dir "MyApp.Tests\\TestResults"'
                 }
             }
         }
